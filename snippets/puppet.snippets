@@ -1,0 +1,31 @@
+snippet class
+	class ${1:NAME} {
+	
+	  ${2}
+	
+	}
+snippet file
+	file { '${1:PATH}':
+	  ensure => ${2:present},
+	  owner  => ${3:root},
+	  group  => ${4:root},
+	  mode   => ${5:0644},
+	  source => 'puppet:///modules/${6:MODULE}/${7:PATH}',
+	}${8}
+snippet template
+	file { '${1:PATH}':
+	  ensure  => ${2:present},
+	  owner   => ${3:root},
+	  group   => ${4:root},
+	  mode    => ${5:0644},
+	  content => template('${6:FILENAME}.erb'),
+	}${7}
+snippet package
+	package { '${1:NAME}':
+	  ensure => ${2:installed},
+	}${3}
+snippet spkg
+	solaris::package { '${1:NAME}':
+	  ensure => ${2:installed},
+	  from   => '${3:MODULE}/${4:packages}',
+	}${5}

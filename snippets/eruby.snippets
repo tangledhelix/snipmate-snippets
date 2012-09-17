@@ -1,0 +1,18 @@
+snippet sco
+	<%= scope.lookupvar('${1:VARIABLE}') %>${2}
+snippet if
+	<% if ${1:CONDITION} -%>
+	  ${2}
+	<% end -%>
+snippet ifelse
+	<% if ${1:CONDITION} -%>
+	  ${2}
+	<% else -%>
+	  ${3}
+	<% end -%>
+snippet elsif
+	<% elsif ${1:CONDITION} -%>
+	  ${2}
+snippet else
+	<% else -%>
+	  ${2}
